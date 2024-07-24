@@ -10,19 +10,16 @@ Este documento descreve um layout de projeto para aplicações em Go que seguem 
 /project-root
 │
 ├── /cmd
-│   └── /app
+│   └── /api
 │       └── main.go
-│
 ├── /internal
 │   ├── /domain
 │   │   ├── /entities
 │   │   │   └── user.go
 │   │   └── /repositories
 │   │       └── user_repository.go
-│   │
 │   ├── /usecases
 │   │   └── user_usecase.go
-│   │
 │   └── /adapters
 │       ├── /controllers
 │       │   └── user_controller.go
@@ -30,30 +27,22 @@ Este documento descreve um layout de projeto para aplicações em Go que seguem 
 │       │   └── user_presenter.go
 │       └── /gateways
 │           └── user_repository_db.go
-│
 ├── /pkg
 │   ├── /configs
 │   │   └── config.yaml
-│   │
 │   ├── /framework
 │   │   ├── /http
 │   │   │   ├── /middlewares
 │   │   │   └── router.go
 │   │   └── /database
 │   │       └── db.go
-│   │
 │   └── /utils
 │       └── strings.go
-│
 ├── /scripts
 │   └── setup.sh
-│
 ├── /test
-│   ├── /integration
-│   │   └── user_integration_test.go
-│   └── /unit
-│       └── user_usecase_test.go
-│
+│   └──  /integration
+│       └── user_integration_test.go
 ├── .gitignore
 ├── go.mod
 └── README.md
@@ -65,7 +54,7 @@ Este documento descreve um layout de projeto para aplicações em Go que seguem 
 
 Este diretório contém os pontos de entrada da aplicação. Cada subdiretório representa uma aplicação executável distinta.
 
-- **/cmd/app**: Contém o arquivo `main.go`, que é o ponto de entrada da aplicação principal. A função `main` neste arquivo geralmente importa e invoca código de outros diretórios como `/internal` e `/pkg`.
+- **/cmd/api**: Contém o arquivo `main.go`, que é o ponto de entrada da aplicação principal. A função `main` neste arquivo geralmente importa e invoca código de outros diretórios como `/internal` e `/pkg`.
 
 #### `/internal`
 
